@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
-    internal class MeterDataSample
+    public class MeterDataSample
     {
+        public int customerID;
+        public DateTime reportTime;
+
+        public MeterDataSample(int customerID, DateTime reportTime)
+        {
+            this.customerID = customerID;
+            this.reportTime = reportTime;
+        }
     }
 }
