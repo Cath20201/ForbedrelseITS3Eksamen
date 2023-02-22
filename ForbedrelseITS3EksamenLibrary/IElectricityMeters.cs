@@ -11,6 +11,6 @@ namespace ForbedrelseITS3EksamenLibrary
         public int ID { get; set; }
         public double Forbrug { get; set; }
         public DateTime Time { get; set; }
-        public double GetElconsumption();
+        public double GetkiloWatt();
     }
 }

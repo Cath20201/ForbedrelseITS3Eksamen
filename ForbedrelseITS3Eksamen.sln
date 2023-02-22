@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbedrelseITS3Eksamen", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbedrelseITS3EksamenLibrary", "ForbedrelseITS3EksamenLibrary\ForbedrelseITS3EksamenLibrary.csproj", "{2CD00324-4C99-4C01-8EF7-51B73788FE3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForbedrelseITS3EksamenNunit", "ForbedrelseITS3EksamenNunit\ForbedrelseITS3EksamenNunit.csproj", "{CADFD285-8728-48FF-A518-9323EA7E0EA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2CD00324-4C99-4C01-8EF7-51B73788FE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CD00324-4C99-4C01-8EF7-51B73788FE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CD00324-4C99-4C01-8EF7-51B73788FE3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CADFD285-8728-48FF-A518-9323EA7E0EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CADFD285-8728-48FF-A518-9323EA7E0EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CADFD285-8728-48FF-A518-9323EA7E0EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CADFD285-8728-48FF-A518-9323EA7E0EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
