@@ -8,5 +8,9 @@ namespace ForbedrelseITS3EksamenLibrary
 {
     public interface IElectricityMeters
     {
+        public int ID { get; set; }
+        public double Forbrug { get; set; }
+        public DateTime Time { get; set; }
+
     }
 }
