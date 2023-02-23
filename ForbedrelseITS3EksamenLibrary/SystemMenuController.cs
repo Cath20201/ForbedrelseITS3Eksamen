@@ -39,6 +39,12 @@ namespace ForbedrelseITS3EksamenLibrary
         {
             DataConsumer.PrintData = false;
         }
+
+        public void Stop()
+        {
+            DataProducer.Stop();
+            DataConsumer.Stop();
+        }
     }
     
 }
