@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
+    //Hej med dig 
     public class SystemMenuController
     {
         private readonly BlockingCollection<MeterDataSample> DataQueue;
