@@ -32,6 +32,11 @@ namespace ForbedrelseITS3Eksamen
                         Console.WriteLine("---Stopping---");
                         controller.Stopprint();
                         break;
+                    case 'x':
+                    case 'X':
+                        controller.Stop();
+                        cont = false;
+                        break;
                 }
             }
         }
