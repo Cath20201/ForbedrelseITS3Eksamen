@@ -14,6 +14,8 @@ namespace ForbedrelseITS3Eksamen
             Console.WriteLine("Control menu:");
             Console.WriteLine("-------------");
             Console.WriteLine("[B]    Start print");
+            Console.WriteLine("[1]    Fastpris elforbrug");
+            Console.WriteLine("[2]    Flekpris elforbrug");
             Console.WriteLine("[S]    Stop print");
             Console.WriteLine("[X]    Quit");
 
@@ -26,6 +28,12 @@ namespace ForbedrelseITS3Eksamen
                     case 'B':
                         Console.WriteLine("---Starting---");
                         controller.Startprint();
+                        break;
+                    case '1':
+                        Console.WriteLine("FixedPrice payment");
+                        break;
+                    case '2':
+                        Console.WriteLine("FlexiblePrice payment");
                         break;
                     case 's':
                     case 'S':

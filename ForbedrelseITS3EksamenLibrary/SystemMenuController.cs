@@ -60,6 +60,14 @@ namespace ForbedrelseITS3EksamenLibrary
             DataProducer.Stop();
             DataConsumer.Stop();
         }
+
+        public void SetPrice(string type)
+        {
+            if (type == "FixedPrice payment")
+                ;
+            if (type == "FlexiblePrice payment")
+                ;
+        }
     }
     
 }

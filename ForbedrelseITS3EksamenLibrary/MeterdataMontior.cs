@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ForbedrelseITS3EksamenLibrary.GoF_Observer;
+using ForbedrelseITS3EksamenLibrary.GoF_Strategy;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
@@ -16,6 +17,7 @@ namespace ForbedrelseITS3EksamenLibrary
         public bool PrintData { get; set; } = false;
         public bool notStopped { get; set; } = true;
         public MeterDataSample MeterDataSample { get; set; }
+        
 
         public MeterdataMontior(BlockingCollection<MeterDataSample> queue)
         {
@@ -33,6 +35,9 @@ namespace ForbedrelseITS3EksamenLibrary
                         try
                         {
                             MeterDataSample = _queue.Take();
+
+                            
+
                             Notify();
                             //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
                         }
