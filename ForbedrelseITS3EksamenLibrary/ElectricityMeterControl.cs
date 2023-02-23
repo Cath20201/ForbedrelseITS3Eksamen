@@ -13,8 +13,9 @@ namespace ForbedrelseITS3EksamenLibrary
         private int waitTime { get; } = 1000; 
         private BlockingCollection<MeterDataSample> _queue;
         private readonly List<IElectricityMeters> _electricityMetersList;
-        private DateTime dateTime = DateTime.MinValue;
         private bool notStopped = true;
+        private DateTime dateTime = DateTime.MinValue;
+        
 
         public ElectricityMeterControl(BlockingCollection<MeterDataSample> queue, List<IElectricityMeters> electricityMetersList)
         {
@@ -34,7 +35,7 @@ namespace ForbedrelseITS3EksamenLibrary
                     _queue.Add(meterDataSample);
                 }
                 Thread.Sleep(waitTime);
-                dateTime.AddMinutes(15);
+                dateTime = dateTime.AddMinutes(15);
             }
             _queue.CompleteAdding();
             Console.WriteLine("Producer stopping.....");

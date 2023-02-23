@@ -32,6 +32,7 @@ namespace ForbedrelseITS3EksamenLibrary
                         try
                         {
                             MeterDataSample = _queue.Take();
+                            Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
                         }
                         catch (InvalidOperationException)
                         {

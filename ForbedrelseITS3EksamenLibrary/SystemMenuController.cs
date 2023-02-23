@@ -13,19 +13,19 @@ namespace ForbedrelseITS3EksamenLibrary
         private readonly ElectricityMeterControl DataProducer;
         private readonly MeterdataMontior DataConsumer;
 
-        private List<IElectricityMeters> ElectricityList;
+        private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
 
 
         public SystemMenuController()
         {
             electricityMeters = new ElectricityMeters(1);
-            
-            ElectricityList = new List<IElectricityMeters>();
-            ElectricityList.Add(electricityMeters);
+
+            _electricityMetersList = new List<IElectricityMeters>();
+            _electricityMetersList.Add(electricityMeters);
 
             DataQueue = new BlockingCollection<MeterDataSample>();
-            DataProducer = new ElectricityMeterControl(DataQueue, ElectricityList);
+            DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
             DataConsumer = new MeterdataMontior(DataQueue);
 
         }
@@ -41,6 +41,7 @@ namespace ForbedrelseITS3EksamenLibrary
         public void Startprint()
         {
             DataConsumer.PrintData = true;
+            
         }
         public void Stopprint()
         {
