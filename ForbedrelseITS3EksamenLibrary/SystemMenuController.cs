@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ForbedrelseITS3EksamenLibrary.GoF_Observer;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
-    //Hej med dig 
+    
     public class SystemMenuController
     {
         private readonly BlockingCollection<MeterDataSample> DataQueue;
@@ -17,6 +18,8 @@ namespace ForbedrelseITS3EksamenLibrary
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
 
+        private IDisplay display;
+        private DisplayController displayController;
 
         public SystemMenuController()
         {
@@ -28,6 +31,9 @@ namespace ForbedrelseITS3EksamenLibrary
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
             DataConsumer = new MeterdataMontior(DataQueue);
+
+            display = new InfoDisplay();
+            displayController = new DisplayController(DataConsumer, display);
 
         }
         

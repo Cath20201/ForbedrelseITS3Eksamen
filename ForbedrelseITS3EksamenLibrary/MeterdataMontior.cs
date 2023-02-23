@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ForbedrelseITS3EksamenLibrary.GoF_Observer;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
     // Consumer
-    public class MeterdataMontior
+    public class MeterdataMontior : MonitorSubejct
     {
         private BlockingCollection<MeterDataSample> _queue;
 
@@ -32,7 +33,8 @@ namespace ForbedrelseITS3EksamenLibrary
                         try
                         {
                             MeterDataSample = _queue.Take();
-                            Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
+                            Notify();
+                            //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
                         }
                         catch (InvalidOperationException)
                         {
@@ -48,5 +50,6 @@ namespace ForbedrelseITS3EksamenLibrary
         {
             notStopped = false;
         }
+
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 {
-    public class MeterDataMonitor
+    public interface IDisplay
     {
+        public void print(int customerID, DateTime reportTime, double cusspending);
     }
 }

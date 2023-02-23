@@ -8,5 +8,6 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 {
     public class DataProvider
     {
+        // Jeg ved ikke om jeg skal bruge den her klasse!!!
     }
 }
