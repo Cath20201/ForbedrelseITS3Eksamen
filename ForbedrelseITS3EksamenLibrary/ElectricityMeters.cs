@@ -9,11 +9,9 @@
         public DateTime Time { get; set; }
 
 
-        public ElectricityMeters(int iD, double forbrug, DateTime time)
+        public ElectricityMeters(int iD)
         {
             ID = iD;
-            Forbrug = forbrug;
-            Time = time;
         }
         public double GetkiloWatt()
         {

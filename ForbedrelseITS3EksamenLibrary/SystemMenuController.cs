@@ -12,11 +12,18 @@ namespace ForbedrelseITS3EksamenLibrary
         private readonly BlockingCollection<MeterDataSample> DataQueue;
         private readonly ElectricityMeterControl DataProducer;
         private readonly MeterdataMontior DataConsumer;
+
         private List<IElectricityMeters> ElectricityList;
+        private IElectricityMeters electricityMeters;
+
 
         public SystemMenuController()
         {
+            electricityMeters = new ElectricityMeters(1);
+            
             ElectricityList = new List<IElectricityMeters>();
+            ElectricityList.Add(electricityMeters);
+
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, ElectricityList);
             DataConsumer = new MeterdataMontior(DataQueue);
