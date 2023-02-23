@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         public void Run()
         {
+            dateTime = new DateTime(2023, 02, 23, 0, 0, 0);
             while (notStopped)
             {
                 foreach (IElectricityMeters e in _electricityMetersList)
@@ -35,6 +37,7 @@ namespace ForbedrelseITS3EksamenLibrary
                     _queue.Add(meterDataSample);
                 }
                 Thread.Sleep(waitTime);
+                
                 dateTime = dateTime.AddMinutes(15);
             }
             _queue.CompleteAdding();
