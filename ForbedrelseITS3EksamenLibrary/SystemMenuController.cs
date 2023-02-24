@@ -31,7 +31,7 @@ namespace ForbedrelseITS3EksamenLibrary
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
             DataConsumer = new MeterdataMontior(DataQueue);
-
+            
             display = new InfoDisplay();
             displayController = new DisplayController(DataConsumer, display);
 

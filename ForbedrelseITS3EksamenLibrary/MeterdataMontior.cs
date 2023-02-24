@@ -20,10 +20,10 @@ namespace ForbedrelseITS3EksamenLibrary
         public IExpenseForPayment _ExpenseForPayment { get; set; }
         
 
-        public MeterdataMontior(BlockingCollection<MeterDataSample> queue, IExpenseForPayment expenseForPayment)
+        public MeterdataMontior(BlockingCollection<MeterDataSample> queue)
         {
             _queue = queue;
-            _ExpenseForPayment = expenseForPayment;
+            
 
         }
 
