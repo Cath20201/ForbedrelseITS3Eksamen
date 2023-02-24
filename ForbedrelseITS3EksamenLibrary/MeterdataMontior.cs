@@ -39,7 +39,7 @@ namespace ForbedrelseITS3EksamenLibrary
                         {
                             MeterDataSample = _queue.Take();
 
-                            
+                            MeterDataSample.Price = _ExpenseForPayment.GetPriceBill(MeterDataSample);
 
                             Notify();
                             //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);

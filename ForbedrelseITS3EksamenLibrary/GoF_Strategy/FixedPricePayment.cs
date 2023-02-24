@@ -8,9 +8,13 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Strategy
 {
     public class FixedPricePayment : IExpenseForPayment
     {
+        private double _price;
+        private int _FixedPrice = 358; // øre
         public double GetPriceBill(MeterDataSample dataSample)
         {
-            throw new NotImplementedException();
+            _price = _FixedPrice * dataSample.customerSpending;
+            
+            return _price/100; // får beløbet ud i kr.
         }
     }
 }
