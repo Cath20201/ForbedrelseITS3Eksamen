@@ -10,7 +10,8 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
     {
         public void print(int customerID, DateTime reportTime, double cusspending, double pricebill)
         {
-            Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending + "\n Prisen er: " + pricebill + " Kr.");
+            Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending);
+            Console.WriteLine("Prisen er: {0:0.000} kr",pricebill);
         }
     }
 }

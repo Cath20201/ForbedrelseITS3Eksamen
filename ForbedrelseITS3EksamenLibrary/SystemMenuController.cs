@@ -18,7 +18,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
-        private IExpenseForPayment Paymentcontrol;
+        
 
         private IDisplay display;
 
@@ -37,7 +37,7 @@ namespace ForbedrelseITS3EksamenLibrary
             
             display = new InfoDisplay();
             displayController = new DisplayController(DataConsumer, display);
-            Paymentcontrol = new FixedPricePayment();
+            
 
         }
         

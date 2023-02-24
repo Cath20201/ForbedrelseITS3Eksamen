@@ -27,6 +27,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Strategy
                 _flexibleprice = 120;
             _price = _flexibleprice * dataSample.customerSpending;
 
+
             return _price/100;
         }
     }
