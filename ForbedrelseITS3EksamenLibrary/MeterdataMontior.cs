@@ -23,7 +23,7 @@ namespace ForbedrelseITS3EksamenLibrary
         public MeterdataMontior(BlockingCollection<MeterDataSample> queue)
         {
             _queue = queue;
-            
+            _ExpenseForPayment = new FixedPricePayment();
 
         }
 

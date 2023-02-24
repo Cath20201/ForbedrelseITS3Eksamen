@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ForbedrelseITS3EksamenLibrary.GoF_Observer;
+using ForbedrelseITS3EksamenLibrary.GoF_Strategy;
 
 namespace ForbedrelseITS3EksamenLibrary
 {
@@ -17,8 +18,10 @@ namespace ForbedrelseITS3EksamenLibrary
 
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
+        private IExpenseForPayment Paymentcontrol;
 
         private IDisplay display;
+
         private DisplayController displayController;
 
         public SystemMenuController()
@@ -34,6 +37,7 @@ namespace ForbedrelseITS3EksamenLibrary
             
             display = new InfoDisplay();
             displayController = new DisplayController(DataConsumer, display);
+            Paymentcontrol = new FixedPricePayment();
 
         }
         
@@ -64,9 +68,9 @@ namespace ForbedrelseITS3EksamenLibrary
         public void SetPrice(string type)
         {
             if (type == "FixedPrice payment")
-                ;
+                DataConsumer._ExpenseForPayment = new FixedPricePayment();
             if (type == "FlexiblePrice payment")
-                ;
+                DataConsumer._ExpenseForPayment = new FlexiblePricePayment();
         }
     }
     

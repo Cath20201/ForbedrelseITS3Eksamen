@@ -30,9 +30,11 @@ namespace ForbedrelseITS3Eksamen
                         controller.Startprint();
                         break;
                     case '1':
+                        Console.WriteLine("Fast El pris");
                         controller.SetPrice("FixedPrice payment");
                         break;
                     case '2':
+                        Console.WriteLine("Flex El pris");
                         controller.SetPrice("FlexiblePrice payment");
                         break;
                     case 's':

@@ -21,7 +21,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         {
             if (_monitor.PrintData)
             {
-                _display.print(_monitor.MeterDataSample.customerID, _monitor.MeterDataSample.reportTime, _monitor.MeterDataSample.customerSpending);
+                _display.print(_monitor.MeterDataSample.customerID, _monitor.MeterDataSample.reportTime, _monitor.MeterDataSample.customerSpending, _monitor.MeterDataSample.Price);
             }
         }
     }

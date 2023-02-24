@@ -14,7 +14,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Strategy
         {
             _price = _FixedPrice * dataSample.customerSpending;
             
-            return _price/100; // får beløbet ud i kr.
+            return _price / 100; // får beløbet ud i kr.
         }
     }
 }

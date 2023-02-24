@@ -8,9 +8,9 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 {
     public class InfoDisplay : IDisplay
     {
-        public void print(int customerID, DateTime reportTime, double cusspending)
+        public void print(int customerID, DateTime reportTime, double cusspending, double pricebill)
         {
-            Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending);
+            Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending + "\n Prisen er: " + pricebill + " Kr.");
         }
     }
 }
