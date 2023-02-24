@@ -8,6 +8,6 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Strategy
 {
     public interface IExpenseForPayment
     {
-        public double GetPriceBill(double priceBill);
+        public double GetPriceBill(MeterDataSample dataSample);
     }
 }

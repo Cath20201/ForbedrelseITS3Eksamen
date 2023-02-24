@@ -17,11 +17,14 @@ namespace ForbedrelseITS3EksamenLibrary
         public bool PrintData { get; set; } = false;
         public bool notStopped { get; set; } = true;
         public MeterDataSample MeterDataSample { get; set; }
+        public IExpenseForPayment _ExpenseForPayment { get; set; }
         
 
-        public MeterdataMontior(BlockingCollection<MeterDataSample> queue)
+        public MeterdataMontior(BlockingCollection<MeterDataSample> queue, IExpenseForPayment expenseForPayment)
         {
             _queue = queue;
+            _ExpenseForPayment = expenseForPayment;
+
         }
 
         public void Run()
