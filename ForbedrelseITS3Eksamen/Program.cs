@@ -16,6 +16,7 @@ namespace ForbedrelseITS3Eksamen
             Console.WriteLine("[B]    Start print");
             Console.WriteLine("[1]    Fastpris elforbrug");
             Console.WriteLine("[2]    Flekpris elforbrug");
+            Console.WriteLine("[H]    Historikken af elforbrug");
             Console.WriteLine("[S]    Stop print");
             Console.WriteLine("[X]    Quit");
 
@@ -36,6 +37,11 @@ namespace ForbedrelseITS3Eksamen
                     case '2':
                         Console.WriteLine("Flex El pris");
                         controller.SetPrice("FlexiblePrice payment");
+                        break;
+                    case 'h':
+                    case 'H':
+                        Console.WriteLine("---Visning af historikken---");
+                        controller.PrintSaveData();
                         break;
                     case 's':
                     case 'S':

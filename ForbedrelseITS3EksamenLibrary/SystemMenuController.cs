@@ -72,6 +72,11 @@ namespace ForbedrelseITS3EksamenLibrary
             if (type == "FlexiblePrice payment")
                 DataConsumer._ExpenseForPayment = new FlexiblePricePayment();
         }
+
+        public void PrintSaveData()
+        {
+            displayController.PrintSaveData();
+        }
     }
     
 }
