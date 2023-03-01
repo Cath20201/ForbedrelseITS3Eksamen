@@ -29,7 +29,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 
         public void PrintSaveData()
         {
-
+            Console.WriteLine("Hej jeg er kundens gemte el forbrug over de sidste 24 timer :-)");
         }
     }
 }
