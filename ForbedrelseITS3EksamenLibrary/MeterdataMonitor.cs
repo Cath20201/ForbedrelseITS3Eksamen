@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,10 @@ using ForbedrelseITS3EksamenLibrary.GoF_Strategy;
 namespace ForbedrelseITS3EksamenLibrary
 {
     // Consumer
-    public class MeterdataMontior : MonitorSubejct
+    public class MeterdataMonitor : MonitorSubejct
     {
         private BlockingCollection<MeterDataSample> _queue;
+        public ConsumptionHistory consumptionHistory { get; set; }
 
         public bool PrintData { get; set; } = false;
         public bool notStopped { get; set; } = true;
@@ -20,7 +22,7 @@ namespace ForbedrelseITS3EksamenLibrary
         public IExpenseForPayment _ExpenseForPayment { get; set; }
         
 
-        public MeterdataMontior(BlockingCollection<MeterDataSample> queue)
+        public MeterdataMonitor(BlockingCollection<MeterDataSample> queue)
         {
             _queue = queue;
             _ExpenseForPayment = new FixedPricePayment();
@@ -40,6 +42,8 @@ namespace ForbedrelseITS3EksamenLibrary
                             MeterDataSample = _queue.Take();
 
                             MeterDataSample.Price = _ExpenseForPayment.GetPriceBill(MeterDataSample);
+
+                            
 
                             Notify();
                             //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);

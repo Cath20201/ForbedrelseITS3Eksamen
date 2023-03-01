@@ -14,12 +14,12 @@ namespace ForbedrelseITS3EksamenLibrary
     {
         private readonly BlockingCollection<MeterDataSample> DataQueue;
         private readonly ElectricityMeterControl DataProducer;
-        private readonly MeterdataMontior DataConsumer;
+        private readonly MeterdataMonitor DataConsumer;
 
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
-        
 
+        private List<MeterDataSample> histories;
         private IDisplay display;
 
         private DisplayController displayController;
@@ -33,7 +33,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
-            DataConsumer = new MeterdataMontior(DataQueue);
+            DataConsumer = new MeterdataMonitor(DataQueue);
             
             display = new InfoDisplay();
             displayController = new DisplayController(DataConsumer, display);
@@ -73,9 +73,9 @@ namespace ForbedrelseITS3EksamenLibrary
                 DataConsumer._ExpenseForPayment = new FlexiblePricePayment();
         }
 
-        public void PrintSaveData()
+        public void PrintHisData()
         {
-            displayController.PrintSaveData();
+            displayController.PrintSaveData(histories);
         }
     }
     

@@ -8,13 +8,15 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 {
     public class DisplayController : IDataObserver
     {
-        private readonly MeterdataMontior _monitor;
+        private readonly MeterdataMonitor _monitor;
         private IDisplay _display;
-        public DisplayController(MeterdataMontior montior, IDisplay display)
+        private IHistory _history;
+        public DisplayController(MeterdataMonitor monitor, IDisplay display)
         {
             _display = display;
-            _monitor = montior;
-            montior.Attach(this);
+            _monitor = monitor;
+            monitor.Attach(this);
+            
         }
 
         public void Update()
@@ -27,9 +29,9 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             }
         }
 
-        public void PrintSaveData()
+        public void PrintSaveData(List<MeterDataSample> Historylist)
         {
-            Console.WriteLine("Hej jeg er kundens gemte el forbrug over de sidste 24 timer :-)");
+            _history.PrintHistory(Historylist);
         }
     }
 }

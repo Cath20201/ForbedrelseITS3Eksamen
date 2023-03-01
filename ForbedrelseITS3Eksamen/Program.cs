@@ -41,7 +41,7 @@ namespace ForbedrelseITS3Eksamen
                     case 'h':
                     case 'H':
                         Console.WriteLine("---Visning af historikken---");
-                        controller.PrintSaveData();
+                        controller.PrintHisData();
                         break;
                     case 's':
                     case 'S':
