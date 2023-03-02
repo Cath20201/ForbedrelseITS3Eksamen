@@ -11,11 +11,11 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         private readonly MeterdataMonitor _monitor;
         private IDisplay _display;
         private IHistory _history;
-        public DisplayController(MeterdataMonitor monitor, IDisplay display, IHistory _history)
+        public DisplayController(MeterdataMonitor monitor, IDisplay display, IHistory history)
         {
             _display = display;
             _monitor = monitor;
-            _history = new ConsumptionHistory();
+            _history = history;
             monitor.Attach(this);
             
         }

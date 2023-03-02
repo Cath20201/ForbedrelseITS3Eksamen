@@ -32,11 +32,11 @@ namespace ForbedrelseITS3EksamenLibrary
             _electricityMetersList = new List<IElectricityMeters>();
             _electricityMetersList.Add(electricityMeters);
 
+            _history = new ConsumptionHistory();
+
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
             DataConsumer = new MeterdataMonitor(DataQueue, _history);
-
-            _history = new ConsumptionHistory();
 
             display = new InfoDisplay();
             displayController = new DisplayController(DataConsumer, display, _history);
