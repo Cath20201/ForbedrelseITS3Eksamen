@@ -17,7 +17,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         public void AddToHistoryList()
         {
-            
+            _historyList.Add();
 
         }
         public void PrintHistory(List<MeterDataSample> Historylist)
