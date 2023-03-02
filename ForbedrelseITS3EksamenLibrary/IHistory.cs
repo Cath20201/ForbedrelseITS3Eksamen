@@ -8,6 +8,7 @@ namespace ForbedrelseITS3EksamenLibrary
 {
     public interface IHistory
     {
-        public void PrintHistory(List<MeterDataSample> Historylist);
+        public List<MeterDataSample> GetHistory();
+        public void AddToHistoryList(MeterDataSample dataSample);
     }
 }

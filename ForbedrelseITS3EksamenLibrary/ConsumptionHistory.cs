@@ -8,21 +8,22 @@ namespace ForbedrelseITS3EksamenLibrary
 {
     public class ConsumptionHistory : IHistory
     {
-        private List<IHistory> _historyList;
+        private List<MeterDataSample> _historyList;
 
-        public ConsumptionHistory(List<IHistory> historyList)
+        public ConsumptionHistory()
         {
-            _historyList = new List<IHistory>();
+            _historyList = new List<MeterDataSample>();
         }
 
-        public void AddToHistoryList()
+        public void AddToHistoryList(MeterDataSample dataSample)
         {
-            _historyList.Add();
+            _historyList.Add(dataSample);
 
         }
-        public void PrintHistory(List<MeterDataSample> Historylist)
+        public List<MeterDataSample> GetHistory()
         {
-            
+            return _historyList;
         }
+
     }
 }

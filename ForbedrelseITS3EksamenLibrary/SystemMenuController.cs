@@ -21,6 +21,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         private List<MeterDataSample> histories;
         private IDisplay display;
+        private IHistory _history;
 
         private DisplayController displayController;
 
@@ -33,10 +34,12 @@ namespace ForbedrelseITS3EksamenLibrary
 
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
-            DataConsumer = new MeterdataMonitor(DataQueue);
-            
+            DataConsumer = new MeterdataMonitor(DataQueue, _history);
+
+            _history = new ConsumptionHistory();
+
             display = new InfoDisplay();
-            displayController = new DisplayController(DataConsumer, display);
+            displayController = new DisplayController(DataConsumer, display, _history);
             
 
         }
@@ -75,7 +78,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         public void PrintHisData()
         {
-            displayController.PrintSaveData(histories);
+            displayController.PrintSaveData();
         }
     }
     
