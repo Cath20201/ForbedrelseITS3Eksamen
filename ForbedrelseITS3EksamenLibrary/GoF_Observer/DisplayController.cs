@@ -33,6 +33,11 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         public void PrintSaveData()
         {
             List<MeterDataSample> list = _history.GetHistory();
+
+            foreach (MeterDataSample recordDataSample in list)
+            {
+                _display.print(recordDataSample.customerID, recordDataSample.reportTime, recordDataSample.customerSpending, recordDataSample.Price);
+            }
         }
     }
 }

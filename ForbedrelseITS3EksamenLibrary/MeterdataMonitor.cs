@@ -20,11 +20,13 @@ namespace ForbedrelseITS3EksamenLibrary
         public bool notStopped { get; set; } = true;
         public MeterDataSample MeterDataSample { get; set; }
         public IExpenseForPayment _ExpenseForPayment { get; set; }
-        
+        public IHistory _history { get; set; }
 
-        public MeterdataMonitor(BlockingCollection<MeterDataSample> queue, IHistory _history)
+
+        public MeterdataMonitor(BlockingCollection<MeterDataSample> queue, IHistory history)
         {
             _queue = queue;
+            _history = history; 
             _ExpenseForPayment = new FixedPricePayment();
 
         }
@@ -43,7 +45,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
                             MeterDataSample.Price = _ExpenseForPayment.GetPriceBill(MeterDataSample);
 
-                            consumptionHistory.AddToHistoryList(MeterDataSample);
+                            _history.AddToHistoryList(MeterDataSample);
 
                             Notify();
                             //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
