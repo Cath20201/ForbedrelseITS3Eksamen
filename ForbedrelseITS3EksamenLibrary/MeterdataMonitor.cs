@@ -43,7 +43,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
                             MeterDataSample.Price = _ExpenseForPayment.GetPriceBill(MeterDataSample);
 
-                            
+                            consumptionHistory.AddToHistoryList();
 
                             Notify();
                             //Console.WriteLine("ID: " + MeterDataSample.customerID + " Tid: " + MeterDataSample.reportTime + " Elforbrug: " + MeterDataSample.customerSpending);
