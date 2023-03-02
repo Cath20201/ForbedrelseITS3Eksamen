@@ -14,7 +14,7 @@ namespace ForbedrelseITS3EksamenLibrary
     public class MeterdataMonitor : MonitorSubejct
     {
         private BlockingCollection<MeterDataSample> _queue;
-        public ConsumptionHistory consumptionHistory { get; set; }
+        //public ConsumptionHistory consumptionHistory { get; set; }
 
         public bool PrintData { get; set; } = false;
         public bool notStopped { get; set; } = true;
