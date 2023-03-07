@@ -13,5 +13,10 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending);
             Console.WriteLine("Prisen er: {0:0.000} kr",pricebill);
         }
+
+        public void printCalculateBill(double CustomerCalculateBill)
+        {
+            Console.WriteLine("Regning: {0:0.000} kr",CustomerCalculateBill);
+        }
     }
 }

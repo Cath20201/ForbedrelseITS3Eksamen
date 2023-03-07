@@ -16,7 +16,8 @@ namespace ForbedrelseITS3Eksamen
             Console.WriteLine("[B]    Start print");
             Console.WriteLine("[1]    Fastpris elforbrug");
             Console.WriteLine("[2]    Flekpris elforbrug");
-            Console.WriteLine("[H]    Historikken af elforbrug");
+            Console.WriteLine("[H]    Vis Kundeinfo og elforbrug historik");
+            Console.WriteLine("[R]    Kundens regning");
             Console.WriteLine("[S]    Stop print");
             Console.WriteLine("[X]    Quit");
 
@@ -40,8 +41,13 @@ namespace ForbedrelseITS3Eksamen
                         break;
                     case 'h':
                     case 'H':
-                        Console.WriteLine("---Visning af historikken---");
+                        Console.WriteLine("---Vis Kundeinfo og elforbrug historik---");
                         controller.PrintHisData();
+                        break;
+                    case 'r':
+                    case 'R':
+                        Console.WriteLine("---Kundens regning---");
+                        controller.ShowBill();
                         break;
                     case 's':
                     case 'S':

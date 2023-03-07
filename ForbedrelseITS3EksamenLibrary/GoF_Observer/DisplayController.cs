@@ -13,6 +13,8 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 
         private Customer _customer;
 
+        private CustomerBill _customerBill;
+
         private IDisplay _display;
         private IHistory _history;
         public DisplayController(MeterdataMonitor monitor, IDisplay display, IHistory history)
@@ -21,6 +23,8 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             _monitor = monitor;
             _history = history;
             monitor.Attach(this);
+
+            _customerBill = new CustomerBill(_customer);
             
             _customer = new Customer(1234, "Peter Jensen", "Lærkevej 10", "Fastpris", 98757);
         }
@@ -48,6 +52,11 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             }
         }
 
+        public void PrintShowBill()
+        {
+            _display.printCalculateBill(_customerBill.CalculateBill());
+        }
+
         public void CustomerInformation()
         {
             Console.WriteLine("Kundenummer: {0}", _customer.Kundenummer);
@@ -55,6 +64,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             Console.WriteLine("Adresse: {0}", _customer.Adresse);
             Console.WriteLine("Kontrakttype: {0}", _customer.Kontrakttype);
             Console.WriteLine("Lokations ID: {0}", _customer.Lokationsid);
+            Console.WriteLine("**************************************");
         }
     }
 }

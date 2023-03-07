@@ -19,7 +19,7 @@ namespace ForbedrelseITS3EksamenLibrary
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
 
-        private List<MeterDataSample> histories;
+        
         private IDisplay display;
         private IHistory _history;
 
@@ -79,6 +79,11 @@ namespace ForbedrelseITS3EksamenLibrary
         public void PrintHisData()
         {
             displayController.PrintSaveData();
+        }
+
+        public void ShowBill()
+        {
+            displayController.PrintShowBill();
         }
     }
     
