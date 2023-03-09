@@ -26,9 +26,9 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             monitor.Attach(this);
             _infoDisplay = new InfoDisplay();
 
-            _customerBill = new CustomerBill(_customer, _consumptionHistory);
-            
-            
+            _customerBill = new CustomerBill(_customer, _display, _consumptionHistory, _history);
+
+
         }
 
         public void Update()
