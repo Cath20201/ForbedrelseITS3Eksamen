@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
 {
-    public class CustomerBill
+    public class CustomerBill : ICustomerBill
     {
         private Customer _customer;
+        private ConsumptionHistory _consumptionHistory;
 
-        public CustomerBill(Customer customer)
+        public CustomerBill(Customer customer, ConsumptionHistory consumptionHistory)
         {
             _customer = customer;
+            _consumptionHistory = consumptionHistory;
         }
 
         public double CalculateBill()
@@ -21,11 +23,17 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
 
             //if (_customer.GetKontrakttype() == "FixedPrice payment")
             //{
-                
+            //    while ()
+            //    {
+            //        // Liste hvor de beregnet priser bliver lagt i
+            //    }
             //}
             //else if (_customer.GetKontrakttype() == "FlexiblePrice payment")
             //{
-                
+            //    while ()
+            //    {
+            //        // Liste hvor de beregnet priser bliver lagt i
+            //    }
             //}
 
             return bill;

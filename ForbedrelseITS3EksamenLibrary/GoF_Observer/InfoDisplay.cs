@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForbedrelseITS3EksamenLibrary.CustomerInfo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,12 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 {
     public class InfoDisplay : IDisplay
     {
+        private Customer _customer;
+
+        public InfoDisplay()
+        {
+            _customer = new Customer(1234, "Peter Jensen", "Lærkevej 10", "FixedPrice payment", 98757);
+        }
         public void print(int customerID, DateTime reportTime, double cusspending, double pricebill)
         {
             Console.WriteLine("ID: " + customerID + " Tid: " + reportTime + " El forbrug: " + cusspending);
@@ -17,6 +24,15 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         public void printCalculateBill(double CustomerCalculateBill)
         {
             Console.WriteLine("Regning: {0:0.000} kr",CustomerCalculateBill);
+        }
+        public void CustomerInformation()
+        {
+            Console.WriteLine("Kundenummer: {0}", _customer.Kundenummer);
+            Console.WriteLine("Navn: {0}", _customer.Navn);
+            Console.WriteLine("Adresse: {0}", _customer.Adresse);
+            Console.WriteLine("Kontrakttype: {0}", _customer.Kontrakttype);
+            Console.WriteLine("Lokations ID: {0}", _customer.Lokationsid);
+            Console.WriteLine("**************************************");
         }
     }
 }

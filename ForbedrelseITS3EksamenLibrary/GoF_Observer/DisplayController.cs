@@ -12,7 +12,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         private readonly MeterdataMonitor _monitor;
 
         private Customer _customer;
-
+        private InfoDisplay _infoDisplay;
         private CustomerBill _customerBill;
 
         private IDisplay _display;
@@ -23,10 +23,11 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             _monitor = monitor;
             _history = history;
             monitor.Attach(this);
+            _infoDisplay = new InfoDisplay();
 
             _customerBill = new CustomerBill(_customer);
             
-            _customer = new Customer(1234, "Peter Jensen", "Lærkevej 10", "Fastpris", 98757);
+            
         }
 
         public void Update()
@@ -44,7 +45,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             List<MeterDataSample> list = _history.GetHistory();
 
             
-            CustomerInformation();
+            _infoDisplay.CustomerInformation();
 
             foreach (MeterDataSample recordDataSample in list)
             {
@@ -57,14 +58,6 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             _display.printCalculateBill(_customerBill.CalculateBill());
         }
 
-        public void CustomerInformation()
-        {
-            Console.WriteLine("Kundenummer: {0}", _customer.Kundenummer);
-            Console.WriteLine("Navn: {0}", _customer.Navn);
-            Console.WriteLine("Adresse: {0}", _customer.Adresse);
-            Console.WriteLine("Kontrakttype: {0}", _customer.Kontrakttype);
-            Console.WriteLine("Lokations ID: {0}", _customer.Lokationsid);
-            Console.WriteLine("**************************************");
-        }
+        
     }
 }
