@@ -21,20 +21,14 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
         {
             double bill = 0;
 
-            //if (_customer.GetKontrakttype() == "FixedPrice payment")
-            //{
-            //    while ()
-            //    {
-            //        // Liste hvor de beregnet priser bliver lagt i
-            //    }
-            //}
-            //else if (_customer.GetKontrakttype() == "FlexiblePrice payment")
-            //{
-            //    while ()
-            //    {
-            //        // Liste hvor de beregnet priser bliver lagt i
-            //    }
-            //}
+            if (_customer.GetKontrakttype() == "FixedPrice payment")
+            {
+                
+            }
+            else if (_customer.GetKontrakttype() == "FlexiblePrice payment")
+            {
+                
+            }
 
             return bill;
         }

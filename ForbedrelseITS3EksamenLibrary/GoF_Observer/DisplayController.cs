@@ -14,6 +14,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
         private Customer _customer;
         private InfoDisplay _infoDisplay;
         private CustomerBill _customerBill;
+        private ConsumptionHistory _consumptionHistory;
 
         private IDisplay _display;
         private IHistory _history;
@@ -25,7 +26,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             monitor.Attach(this);
             _infoDisplay = new InfoDisplay();
 
-            _customerBill = new CustomerBill(_customer);
+            _customerBill = new CustomerBill(_customer, _consumptionHistory);
             
             
         }
