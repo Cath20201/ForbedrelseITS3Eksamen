@@ -12,24 +12,22 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
         private Customer _customer;
         private IDisplay _display;
         private IHistory _history;
-        private ConsumptionHistory _consumptionHistory;
+        
 
-        public CustomerBill(Customer customer, IDisplay display,
-            ConsumptionHistory consumptionHistory, IHistory history)
+        public CustomerBill(Customer customer, IDisplay display, IHistory history)
         {
             _display = display;
             _history = history;
             _customer = customer;
-            _consumptionHistory = consumptionHistory;
         }
 
-        public double CalculateBill()
+        public double CalculateBill(Customer customer)
         {
             double bill = 0;
 
             List<MeterDataSample> CalculateBillList = _history.GetHistory();
 
-            if (_customer.GetKontrakttype() == "FixedPrice payment")
+            if (_customer.Kontrakttype == "FixedPrice payment")
             {
                 foreach (MeterDataSample BillFlixed in CalculateBillList)
                 {
@@ -38,7 +36,7 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
             }
             else if (_customer.GetKontrakttype() == "FlexiblePrice payment")
             {
-                
+
             }
 
             return bill;

@@ -26,7 +26,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
             monitor.Attach(this);
             _infoDisplay = new InfoDisplay();
 
-            _customerBill = new CustomerBill(_customer, _display, _consumptionHistory, _history);
+            _customerBill = new CustomerBill(_customer, _display, _history);
 
 
         }
@@ -56,7 +56,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 
         public void PrintShowBill()
         {
-            _display.printCalculateBill(_customerBill.CalculateBill());
+            _display.printCalculateBill(_customerBill.CalculateBill(_customer));
         }
 
         

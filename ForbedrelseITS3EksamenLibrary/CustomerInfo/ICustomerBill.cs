@@ -8,6 +8,6 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
 {
     public interface ICustomerBill
     {
-        public double CalculateBill();
+        public double CalculateBill(Customer customer);
     }
 }
