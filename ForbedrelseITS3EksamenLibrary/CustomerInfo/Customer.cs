@@ -23,10 +23,6 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
             Lokationsid = lokationsid;
         }
 
-        public string GetKontrakttype()
-        {
-            return Kontrakttype;
-        }
 
 
     }

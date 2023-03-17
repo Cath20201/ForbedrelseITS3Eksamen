@@ -27,7 +27,10 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
 
             List<MeterDataSample> CalculateBillList = _history.GetHistory();
 
-            
+            foreach (var Billprice in CalculateBillList)
+            {
+                 bill += Billprice.Price;
+            }
 
             return bill;
         }
