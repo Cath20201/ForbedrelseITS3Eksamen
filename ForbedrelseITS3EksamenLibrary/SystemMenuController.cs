@@ -86,8 +86,7 @@ namespace ForbedrelseITS3EksamenLibrary
 
         public void ShowBill()
         {
-            
-            //displayController.PrintShowBill();
+            displayController.PrintShowBill();
         }
     }
     
