@@ -27,17 +27,7 @@ namespace ForbedrelseITS3EksamenLibrary.CustomerInfo
 
             List<MeterDataSample> CalculateBillList = _history.GetHistory();
 
-            if (_customer.Kontrakttype == "FixedPrice payment")
-            {
-                foreach (MeterDataSample BillFlixed in CalculateBillList)
-                {
-                    _display.printCalculateBill(BillFlixed.Price);
-                }
-            }
-            else if (_customer.GetKontrakttype() == "FlexiblePrice payment")
-            {
-
-            }
+            
 
             return bill;
         }

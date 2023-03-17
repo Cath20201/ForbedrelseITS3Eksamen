@@ -11,9 +11,9 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
     {
         private Customer _customer;
 
-        public InfoDisplay()
+        public InfoDisplay(Customer customer)
         {
-            _customer = new Customer(1234, "Peter Jensen", "Lærkevej 10", "FixedPrice payment", 98757);
+            _customer = customer;
         }
         public void print(int customerID, DateTime reportTime, double cusspending, double pricebill)
         {

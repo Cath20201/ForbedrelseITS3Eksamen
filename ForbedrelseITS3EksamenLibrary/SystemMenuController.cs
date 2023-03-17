@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ForbedrelseITS3EksamenLibrary.CustomerInfo;
 using ForbedrelseITS3EksamenLibrary.GoF_Observer;
 using ForbedrelseITS3EksamenLibrary.GoF_Strategy;
 
@@ -19,7 +20,7 @@ namespace ForbedrelseITS3EksamenLibrary
         private List<IElectricityMeters> _electricityMetersList;
         private IElectricityMeters electricityMeters;
 
-        
+        private Customer _customer;
         private IDisplay display;
         private IHistory _history;
 
@@ -32,13 +33,15 @@ namespace ForbedrelseITS3EksamenLibrary
             _electricityMetersList = new List<IElectricityMeters>();
             _electricityMetersList.Add(electricityMeters);
 
+            _customer = new Customer(1234, "Peter Jensen", "Lærkevej 10", "FixedPrice payment", 98757);
+
             _history = new ConsumptionHistory();
 
             DataQueue = new BlockingCollection<MeterDataSample>();
             DataProducer = new ElectricityMeterControl(DataQueue, _electricityMetersList);
             DataConsumer = new MeterdataMonitor(DataQueue, _history);
 
-            display = new InfoDisplay();
+            display = new InfoDisplay(_customer);
             displayController = new DisplayController(DataConsumer, display, _history);
             
 

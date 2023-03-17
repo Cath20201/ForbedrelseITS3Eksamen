@@ -18,13 +18,14 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 
         private IDisplay _display;
         private IHistory _history;
-        public DisplayController(MeterdataMonitor monitor, IDisplay display, IHistory history)
+        public DisplayController(MeterdataMonitor monitor, IDisplay display, IHistory history, Customer customer)
         {
             _display = display;
             _monitor = monitor;
             _history = history;
+            _customer = customer;
             monitor.Attach(this);
-            _infoDisplay = new InfoDisplay();
+            _infoDisplay = new InfoDisplay(_customer);
 
             _customerBill = new CustomerBill(_customer, _display, _history);
 
@@ -56,7 +57,7 @@ namespace ForbedrelseITS3EksamenLibrary.GoF_Observer
 
         public void PrintShowBill()
         {
-            _display.printCalculateBill(_customerBill.CalculateBill(_customer));
+            _display.printCalculateBill(_customerBill.CalculateBill( _customer));
         }
 
         
