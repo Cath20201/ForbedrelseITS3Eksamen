@@ -42,7 +42,7 @@ namespace ForbedrelseITS3EksamenLibrary
             DataConsumer = new MeterdataMonitor(DataQueue, _history);
 
             display = new InfoDisplay(_customer);
-            displayController = new DisplayController(DataConsumer, display, _history);
+            displayController = new DisplayController(DataConsumer, display, _history, _customer);
             
 
         }
